@@ -1,7 +1,6 @@
 About
 -----
-This is template configuration for building stress testing environments on
-demand in EC2. It will:
+This is template configuration for building and executing short lived stress testing environments in EC2. The purpose is to automate the following steps:
 
 1. Build a given number of instances.
 2. Apply configuration.
@@ -28,3 +27,4 @@ Usage
 -----
 
     ./run.sh
+
