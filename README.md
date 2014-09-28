@@ -28,3 +28,10 @@ Usage
 
     ./run.sh
 
+Requirements
+------------
+
+* ansible <https://github.com/ansible/ansible>
+* python-boto <https://github.com/boto/boto>
+* EC2 account with credentials
+
