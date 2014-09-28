@@ -1,6 +1,16 @@
+About
+-----
+This is template configuration for building stress testing environments on
+demand in EC2. It will:
+
+1. Build a given number of instances.
+2. Apply configuration.
+3. Start stress testing.
+4. Terminate the instances when done.
+
 Configuration
 -------------
-Put the following in host_vars/localhost:
+Put the following in ``host_vars/localhost``:
 
     ec2_access_key: "ACCESS_KEY"
     ec2_secret_key: "SECRET_KEY"
@@ -12,3 +22,9 @@ Put the following in host_vars/localhost:
     zone: "us-east-1c"
     instance_count: 10
 
+Change the siege command to run in ``roles/siege/files/siege-exec`` and the URLs to request in ``roles/siege/files/urls.txt``.
+
+Usage
+-----
+
+    ./run.sh
