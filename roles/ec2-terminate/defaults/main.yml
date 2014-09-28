@@ -1,0 +1,9 @@
+ec2_access_key: "YOUR_ACCESS_KEY"
+ec2_secret_key: "YOUR_SECRET_KEY"
+keypair: "YOUR_KEYPAIR_NAME"
+instance_type: "m3.medium"
+image: "ami-018c9568"
+group: "SECURITY_GROUP"
+region: "us-east-1"
+zone: "us-east-1a"
+instance_count: 20

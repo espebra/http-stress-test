@@ -1,0 +1,20 @@
+- hosts: localhost
+  connection: local
+  gather_facts: False
+  roles:
+    - "ec2-launch"
+
+- hosts: clients
+  gather_facts: True
+  user: ubuntu
+  sudo: True
+  sudo_user: root
+  roles:
+    - siege
+
+- hosts: localhost
+  connection: local
+  gather_facts: False
+  roles:
+    - "ec2-terminate"
+

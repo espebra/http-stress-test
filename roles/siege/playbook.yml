@@ -1,0 +1,30 @@
+- hosts: localhost
+  connection: local
+  gather_facts: False
+  roles:
+    - launch_ec2
+
+- hosts: clients
+  gather_facts: True
+  user: ubuntu
+  sudo: True
+  sudo_user: root
+  roles:
+    - ec2_facts
+    - siege
+
+- name: "API accelerator client"
+  hosts: client
+  user: ubuntu
+  sudo: True
+  sudo_user: root
+  tasks:
+    - ec2_facts:
+    - apt: name=siege state=installed
+    - copy: src="client/siege-exec" dest="/usr/local/bin/siege-exec" mode=555
+    - copy: src=client/urls.txt dest=/urls.txt
+    - command: /usr/local/bin/siege-exec
+      async: 1800
+      poll: 15
+
+

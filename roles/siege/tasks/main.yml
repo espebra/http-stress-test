@@ -1,0 +1,12 @@
+- name: "Installing packages"
+  apt: name=siege state=installed
+- name: "Ensure launch script is in place"
+  copy: src="siege-exec" dest="/usr/local/bin/siege-exec" mode=555
+- name: "Ensure URL list is in place"
+  copy: src="urls.txt" dest="/opt/urls.txt"
+- name: "Initiate stress test"
+  command: "/usr/local/bin/siege-exec"
+  async: 1800
+  poll: 15
+
+

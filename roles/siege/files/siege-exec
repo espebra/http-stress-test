@@ -1,0 +1,3 @@
+#!/bin/bash
+#siege -f /opt/urls.txt -b -i -t 10M
+siege -f /opt/urls.txt -i -t 2M
